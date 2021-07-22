@@ -12,7 +12,7 @@ RUN /tmp/install-librespot.sh
 
 FROM debian:buster
 
-ARG SNAPCAST_VERSION=0.23.0
+ARG SNAPCAST_VERSION=0.25.0
 ARG ARCH=amd64
 
 RUN apt-get update \
