@@ -21,6 +21,10 @@ RUN apt-get update \
  && dpkg -i /tmp/snapserver.deb || apt-get install -f -y --no-install-recommends \
  && apt-get clean && rm -fR /var/lib/apt/lists
 
+RUN curl -L -o /tmp/snapclient.deb "https://github.com/badaix/snapcast/releases/download/v${SNAPCAST_VERSION}/snapclient_${SNAPCAST_VERSION}-1_${ARCH}.deb" \
+ && dpkg -i /tmp/snapclient.deb || apt-get install -f -y --no-install-recommends \
+ && apt-get clean && rm -fR /var/lib/apt/lists
+
 COPY --from=librespot /usr/local/cargo/bin/librespot /usr/local/bin/
 
 CMD ["snapserver"]
