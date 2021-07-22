@@ -27,4 +27,4 @@ COPY run.sh /
 CMD ["/run.sh"]
 
 ENV DEVICE_NAME=Snapcast
-EXPOSE 1704/tcp 1705/tcp
+EXPOSE 1704/tcp 1705/tcp 1780/tcp
