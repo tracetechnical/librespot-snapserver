@@ -23,8 +23,7 @@ RUN apt-get update \
 
 COPY --from=librespot /usr/local/cargo/bin/librespot /usr/local/bin/
 
-COPY run.sh /
-CMD ["/run.sh"]
+CMD ["snapserver"]
 
 ENV DEVICE_NAME=Snapcast
 EXPOSE 1704/tcp 1705/tcp 1780/tcp
